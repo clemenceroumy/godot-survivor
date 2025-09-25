@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hd8nhpuoeh2g"
-path="res://.godot/imported/Soldier-Idle.png-f0389fdfc92fb1119f06281e42c99764.ctex"
+uid="uid://bo7b4tud5rxhs"
+path="res://.godot/imported/Soldier-Walk.png-03dc848c9db4bb77c7fc34767d781cd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Soldier-Idle.png"
-dest_files=["res://.godot/imported/Soldier-Idle.png-f0389fdfc92fb1119f06281e42c99764.ctex"]
+source_file="res://assets/sprites/Soldier-Walk.png"
+dest_files=["res://.godot/imported/Soldier-Walk.png-03dc848c9db4bb77c7fc34767d781cd0.ctex"]
 
 [params]
 
