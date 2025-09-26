@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccidxqyubwvse"]
+
+[ext_resource type="Texture2D" uid="uid://c12hilbaquxo1" path="res://assets/world/Oak_Tree.png" id="1_hdder"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bjnob"]
+radius = 7.0
+height = 16.0
+
+[node name="Tree" type="StaticBody2D"]
+scale = Vector2(2, 2)
+
+[node name="OakTree" type="Sprite2D" parent="."]
+position = Vector2(32, 40)
+texture = ExtResource("1_hdder")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31.5, 57.5)
+shape = SubResource("CapsuleShape2D_bjnob")
