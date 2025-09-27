@@ -13,8 +13,8 @@ func _idle_animation():
 	%WalkingAnimatedSprite2D.hide()
 
 func _physics_process(delta: float):
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * 600
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
+	velocity = direction * 400
 	move_and_slide()
 	
 	if(velocity == Vector2.ZERO):
