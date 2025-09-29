@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+@onready var soldier = get_node('/root/Game/Soldier')
+
 func _physics_process(delta: float):
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
-	velocity = direction * 400
+	var direction = global_position.direction_to(soldier.global_position)
+	velocity = direction * 200
 	move_and_slide()
 	
 	if(velocity == Vector2.ZERO):

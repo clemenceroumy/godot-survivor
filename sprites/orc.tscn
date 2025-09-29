@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://burjhoxe5u840"]
+[gd_scene load_steps=20 format=3 uid="uid://burjhoxe5u840"]
 
+[ext_resource type="Script" uid="uid://drqbdmu2opx8m" path="res://sprites/orc.gd" id="1_46wd5"]
 [ext_resource type="Texture2D" uid="uid://c2isr80p51waa" path="res://assets/sprites/Orc-Idle.png" id="1_j0qyf"]
 [ext_resource type="Texture2D" uid="uid://bluo81gmwsbep" path="res://assets/sprites/Orc-Walk.png" id="2_46wd5"]
 
@@ -110,7 +111,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4r3u6")
 }],
 "loop": true,
-"name": &"walking",
+"name": &"walk",
 "speed": 10.0
 }]
 
@@ -120,13 +121,13 @@ height = 11.333334
 
 [node name="Orc" type="CharacterBody2D"]
 scale = Vector2(3, 3)
+script = ExtResource("1_46wd5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(4, -1)
 sprite_frames = SubResource("SpriteFrames_kvqjm")
-animation = &"walking"
-frame_progress = 0.77646136
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.66666675, 2)
