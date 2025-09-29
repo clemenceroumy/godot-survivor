@@ -13,3 +13,9 @@
 
 ## Tools
 - [Pixel art tool](https://www.piskelapp.com)
+
+# TODO
+- [x] Main sprites with animation
+- [ ] Add sounds
+- [ ] Random orcs pursuing main character
+- [ ] Fire ennemies to kill them
