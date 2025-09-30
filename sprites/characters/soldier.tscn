@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bmsamr4afj6go"]
+[gd_scene load_steps=21 format=3 uid="uid://bmsamr4afj6go"]
 
 [ext_resource type="Texture2D" uid="uid://hd8nhpuoeh2g" path="res://assets/sprites/Soldier-Idle.png" id="1_qujof"]
-[ext_resource type="Script" uid="uid://n4rchiwb5r0f" path="res://sprites/soldier.gd" id="2_348n5"]
+[ext_resource type="Script" uid="uid://n4rchiwb5r0f" path="res://sprites/characters/soldier.gd" id="2_348n5"]
 [ext_resource type="Texture2D" uid="uid://bo7b4tud5rxhs" path="res://assets/sprites/Soldier-Walk.png" id="3_yskhp"]
+[ext_resource type="PackedScene" uid="uid://b7oxc45pkoeo1" path="res://sprites/weapons/bow.tscn" id="4_r4r8b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qujof"]
 atlas = ExtResource("1_qujof")
@@ -132,3 +133,6 @@ frame_progress = 0.47947928
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.3333333)
 shape = SubResource("CapsuleShape2D_ahfb0")
+
+[node name="Bow" parent="." instance=ExtResource("4_r4r8b")]
+position = Vector2(6, 2)

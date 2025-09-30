@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://burjhoxe5u840"]
 
-[ext_resource type="Script" uid="uid://drqbdmu2opx8m" path="res://sprites/orc.gd" id="1_46wd5"]
+[ext_resource type="Script" uid="uid://drqbdmu2opx8m" path="res://sprites/characters/orc.gd" id="1_46wd5"]
 [ext_resource type="Texture2D" uid="uid://c2isr80p51waa" path="res://assets/sprites/Orc-Idle.png" id="1_j0qyf"]
 [ext_resource type="Texture2D" uid="uid://bluo81gmwsbep" path="res://assets/sprites/Orc-Walk.png" id="2_46wd5"]
 
