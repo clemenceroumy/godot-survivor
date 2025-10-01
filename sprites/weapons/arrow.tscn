@@ -4,19 +4,19 @@
 [ext_resource type="Script" uid="uid://dw38drxp0do7t" path="res://sprites/weapons/arrow.gd" id="1_ymvs0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onp3q"]
-size = Vector2(2.03125, 2)
+size = Vector2(20.007813, 4.5)
 
 [node name="Arrow" type="Area2D"]
-collision_layer = 0
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_ymvs0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(8, 8)
-scale = Vector2(0.5, 0.5)
+position = Vector2(16.000002, 5.58839e-09)
+rotation = -0.006574234
 texture = ExtResource("1_4p4a3")
+offset = Vector2(-7.0650606, 0.39313912)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(11, 8)
+position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_onp3q")

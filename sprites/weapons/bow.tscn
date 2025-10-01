@@ -1,10 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7oxc45pkoeo1"]
+[gd_scene load_steps=4 format=3 uid="uid://b7oxc45pkoeo1"]
 
 [ext_resource type="Script" uid="uid://bwvt2ust7o2nl" path="res://sprites/weapons/bow.gd" id="1_axy0r"]
+[ext_resource type="Texture2D" uid="uid://u21gbns88fa3" path="res://assets/sprites/bow.png" id="2_onp3q"]
 
-[node name="Bow" type="Marker2D"]
-gizmo_extents = 17.1
+[sub_resource type="CircleShape2D" id="CircleShape2D_onp3q"]
+radius = 36.013885
+
+[node name="Bow" type="Area2D"]
 script = ExtResource("1_axy0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_onp3q")
+
+[node name="BoxPivot" type="Marker2D" parent="."]
+gizmo_extents = 14.5
+
+[node name="Bow" type="Sprite2D" parent="BoxPivot"]
+position = Vector2(6.000001, 2.3841858e-07)
+rotation = 0.76982176
+scale = Vector2(0.171875, 0.171875)
+texture = ExtResource("2_onp3q")
+
+[node name="ShootingPoint" type="Marker2D" parent="BoxPivot/Bow"]
+unique_name_in_owner = true
+position = Vector2(16.710627, -16.197971)
+rotation = -0.768957
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
