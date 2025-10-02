@@ -117,8 +117,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahfb0"]
-radius = 6.0000005
-height = 12.000001
+radius = 5.0
+height = 10.0
 
 [node name="Soldier" type="CharacterBody2D"]
 scale = Vector2(3, 3)
@@ -135,4 +135,3 @@ position = Vector2(0, 1.3333333)
 shape = SubResource("CapsuleShape2D_ahfb0")
 
 [node name="Bow" parent="." instance=ExtResource("4_r4r8b")]
-position = Vector2(2.333333, 0)

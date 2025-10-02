@@ -5,10 +5,10 @@ const SPEED = 200
 var RANGE = 1200
 
 func _physics_process(delta: float) -> void:
-	var direction = Vector2.RIGHT.rotated(rotation).normalized()
+	var direction = Vector2.RIGHT.rotated(rotation)
 	
-	travelled_distance = delta * SPEED
-	position += direction * travelled_distance
+	position += direction * delta * SPEED
+	travelled_distance += delta * SPEED
 	
 	if(travelled_distance > RANGE):
 		queue_free() #destroy this arrow instance

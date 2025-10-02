@@ -18,7 +18,7 @@ shape = SubResource("CircleShape2D_onp3q")
 gizmo_extents = 14.5
 
 [node name="BowSprite" type="Sprite2D" parent="BoxPivot"]
-position = Vector2(6.000001, 2.3841858e-07)
+position = Vector2(8, 4.7683716e-07)
 rotation = 0.76982176
 scale = Vector2(0.171875, 0.171875)
 texture = ExtResource("2_onp3q")
