@@ -10,6 +10,7 @@
 ## Assets
 - https://zerie.itch.io/tiny-rpg-character-asset-pack
 - https://kenmi-art.itch.io/cute-fantasy-rpg
+- https://clockworkraven.itch.io/raven-fantasy-icons
 
 ## Tools
 - [Pixel art tool](https://www.piskelapp.com)
