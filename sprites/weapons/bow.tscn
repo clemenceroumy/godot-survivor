@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://u21gbns88fa3" path="res://assets/sprites/bow.png" id="2_onp3q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onp3q"]
-radius = 59.0
+radius = 13.341664
 
 [node name="Bow" type="Area2D"]
 collision_layer = 0

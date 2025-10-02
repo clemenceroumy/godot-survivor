@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bmsamr4afj6go"]
+[gd_scene load_steps=22 format=3 uid="uid://bmsamr4afj6go"]
 
 [ext_resource type="Texture2D" uid="uid://hd8nhpuoeh2g" path="res://assets/sprites/Soldier-Idle.png" id="1_qujof"]
 [ext_resource type="Script" uid="uid://n4rchiwb5r0f" path="res://sprites/characters/soldier.gd" id="2_348n5"]
@@ -120,6 +120,9 @@ animations = [{
 radius = 5.0
 height = 10.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4r8b"]
+size = Vector2(12.333334, 17.333334)
+
 [node name="Soldier" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 script = ExtResource("2_348n5")
@@ -135,3 +138,10 @@ position = Vector2(0, 1.3333333)
 shape = SubResource("CapsuleShape2D_ahfb0")
 
 [node name="Bow" parent="." instance=ExtResource("4_r4r8b")]
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-0.16666675, -1.3333333)
+shape = SubResource("RectangleShape2D_r4r8b")
+debug_color = Color(0.9882353, 0.105882354, 0, 0.3529412)

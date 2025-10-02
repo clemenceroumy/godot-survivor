@@ -1,8 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://burjhoxe5u840"]
+[gd_scene load_steps=28 format=3 uid="uid://burjhoxe5u840"]
 
 [ext_resource type="Script" uid="uid://drqbdmu2opx8m" path="res://sprites/characters/orc.gd" id="1_46wd5"]
 [ext_resource type="Texture2D" uid="uid://c2isr80p51waa" path="res://assets/sprites/Orc-Idle.png" id="1_j0qyf"]
 [ext_resource type="Texture2D" uid="uid://bluo81gmwsbep" path="res://assets/sprites/Orc-Walk.png" id="2_46wd5"]
+[ext_resource type="Texture2D" uid="uid://bn5tqfijl4tf0" path="res://assets/sprites/Orc-Hurt.png" id="3_aks3x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aks3x"]
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypp3"]
+bg_color = Color(0.50518316, 0.14035413, 4.813075e-08, 1)
+corner_detail = 10
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wois"]
 atlas = ExtResource("1_j0qyf")
@@ -27,6 +35,22 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_psymn"]
 atlas = ExtResource("1_j0qyf")
 region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx5eo"]
+atlas = ExtResource("3_aks3x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qdei"]
+atlas = ExtResource("3_aks3x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv8ek"]
+atlas = ExtResource("3_aks3x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ydcr"]
+atlas = ExtResource("3_aks3x")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20bu4"]
 atlas = ExtResource("2_46wd5")
@@ -87,6 +111,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fx5eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qdei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv8ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ydcr")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_20bu4")
 }, {
 "duration": 1.0,
@@ -119,16 +160,48 @@ animations = [{
 radius = 4.666667
 height = 11.333334
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uypp3"]
+size = Vector2(15.000001, 15.666668)
+
 [node name="Orc" type="CharacterBody2D"]
 scale = Vector2(3, 3)
+platform_floor_layers = 4294901760
 script = ExtResource("1_46wd5")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.333332
+offset_top = -13.666666
+offset_right = 9.000002
+offset_bottom = -9.666666
+grow_horizontal = 2
+accessibility_name = "healthbar"
+theme_override_styles/background = SubResource("StyleBoxFlat_aks3x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uypp3")
+max_value = 3.0
+step = 1.0
+value = 3.0
+show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(4, -1)
 sprite_frames = SubResource("SpriteFrames_kvqjm")
-animation = &"walk"
+animation = &"hurt"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.66666675, 2)
 shape = SubResource("CapsuleShape2D_0i7wq")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-0.16666698, -0.50000024)
+shape = SubResource("RectangleShape2D_uypp3")
+debug_color = Color(0.9882353, 0.17254902, 0.1882353, 0.2)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
