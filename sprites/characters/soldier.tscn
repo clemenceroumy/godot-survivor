@@ -135,4 +135,4 @@ position = Vector2(0, 1.3333333)
 shape = SubResource("CapsuleShape2D_ahfb0")
 
 [node name="Bow" parent="." instance=ExtResource("4_r4r8b")]
-position = Vector2(0.3333335, 0)
+position = Vector2(0.33333325, 0)

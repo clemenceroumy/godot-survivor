@@ -5,10 +5,9 @@ extends Area2D
 func shoot(): 
 	const arrow = preload("res://sprites/weapons/arrow.tscn")
 	var new_arrow = arrow.instantiate()
-	
-	new_arrow.global_position = %ShootingPoint.global_position
+
 	new_arrow.global_rotation = %ShootingPoint.global_rotation
-	%ShootingPoint.add_child(new_arrow)
+	self.add_child(new_arrow) #attach to bow
 	
 func _on_timer_timeout() -> void:
 	shoot()
