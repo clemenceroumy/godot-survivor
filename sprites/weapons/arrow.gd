@@ -12,3 +12,7 @@ func _physics_process(delta: float) -> void:
 	
 	if(travelled_distance > RANGE):
 		queue_free() #destroy this arrow instance
+
+
+func _on_body_entered(body: Node2D) -> void:
+	queue_free()
