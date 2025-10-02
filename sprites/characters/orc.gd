@@ -22,12 +22,12 @@ func _physics_process(delta: float):
 func take_damage() -> void:
 	$HealthBar.value -= 1
 	is_walking = false
-	$AnimatedSprite2D.play('hurt')
 	
 	if($HealthBar.value == 0):
+		$AnimatedSprite2D.play("die")
+		await $AnimatedSprite2D.animation_finished
 		queue_free()
-
-
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if($AnimatedSprite2D.animation == 'hurt'):
+	else: 
+		$AnimatedSprite2D.play('hurt')
+		await $AnimatedSprite2D.animation_finished
 		is_walking = true

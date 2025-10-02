@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://burjhoxe5u840"]
+[gd_scene load_steps=33 format=3 uid="uid://burjhoxe5u840"]
 
 [ext_resource type="Script" uid="uid://drqbdmu2opx8m" path="res://sprites/characters/orc.gd" id="1_46wd5"]
 [ext_resource type="Texture2D" uid="uid://c2isr80p51waa" path="res://assets/sprites/Orc-Idle.png" id="1_j0qyf"]
 [ext_resource type="Texture2D" uid="uid://bluo81gmwsbep" path="res://assets/sprites/Orc-Walk.png" id="2_46wd5"]
 [ext_resource type="Texture2D" uid="uid://bn5tqfijl4tf0" path="res://assets/sprites/Orc-Hurt.png" id="3_aks3x"]
+[ext_resource type="Texture2D" uid="uid://cundvtomv6b2q" path="res://assets/sprites/Orc-Death.png" id="3_fx5eo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aks3x"]
 corner_detail = 10
@@ -35,6 +36,22 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_psymn"]
 atlas = ExtResource("1_j0qyf")
 region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4de64"]
+atlas = ExtResource("3_fx5eo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gg5r"]
+atlas = ExtResource("3_fx5eo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miexx"]
+atlas = ExtResource("3_fx5eo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ugxa"]
+atlas = ExtResource("3_fx5eo")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fx5eo"]
 atlas = ExtResource("3_aks3x")
@@ -107,7 +124,24 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 9.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4de64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gg5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miexx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ugxa")
+}],
+"loop": false,
+"name": &"die",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -124,7 +158,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -189,9 +223,7 @@ show_percentage = false
 texture_filter = 1
 position = Vector2(4, -1)
 sprite_frames = SubResource("SpriteFrames_kvqjm")
-animation = &"hurt"
-frame = 3
-frame_progress = 1.0
+frame_progress = 0.7054448
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.66666675, 2)
